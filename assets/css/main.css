@@ -1,3 +1,16 @@
 .container {
-    width: 65%;
+    width: 55%;
+    background-color: #fff;
+    background-image: none;
+    height: 100%;
+    border: #faf2cc 3px solid;
+}
+
+body {
+    background-image: url('http://i.imgur.com/U3W9lfF.gif');
+    background-size: 3%;
+}
+
+span {
+    display: block;
 }
