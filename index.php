@@ -43,6 +43,7 @@ include 'modules/ModuleManager.php';
         </div>
         <div id="footer" class="span12">
             <?
+            echo ("Current module: " . $module->getName());
             $module->getFooter();
             ?>
             <span class="footnote pull-right">

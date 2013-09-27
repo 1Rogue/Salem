@@ -16,19 +16,19 @@ class Globals implements Module {
         $_SESSION['userid'] = '1';
         if (isset($_SESSION['userid'])) {
             $uid = $_SESSION['userid'];
-            $mysqli = mysqli_connect("localhost", "localdev", "XnWcgBXbWMfc", "salem");
+            $mysqli = mysqli_connect("localhost", "localdev", "XnWcgBXbWMfc", "salem")
+                    or die ("Error connecting to MySQL database");
 
             //  Working SQL queries for writeups
             #SELECT * FROM `writeups` t1 INNER JOIN `users` t2 ON t1.userid = t2.id;
             #SELECT * FROM `writeups` t1, `users` t2 WHERE t2.user = 'Spencer.Alderman' AND t2.id = t1.userid
             #SELECT * FROM `writeups` WHERE `userid`=''
-            $result = mysqli_query($mysqli, "SELECT * FROM `writeups` WHERE `userid`='" . $uid . "'");
-            
+            //$result = mysqli_query($mysqli, "SELECT * FROM `writeups` WHERE `userid`='" . $uid . "'");
         }
     }
 
     public function getFooter() {
-        echo ("This is global's footer");
+        
     }
 
     public function getHeader() {

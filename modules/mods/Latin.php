@@ -23,7 +23,7 @@ class Latin implements Module {
     }
 
     public function getFooter() {
-        echo ("This is global's footer");
+        
     }
 
     public function getHeader() {

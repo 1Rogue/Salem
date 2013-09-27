@@ -16,40 +16,60 @@ class Insert implements Module {
     public function getContent() {
 
         if (isset($_POST['submit'])) {
+            $arr = array(
+                "name" => $_POST['name'],
+                "fname" => $_POST['fname'],
+                "DOB" => $_POST['dobMonth'] . "--" . $_POST['dobDay'] . "--" . $_POST['dobYear'],
+                "color" => $_POST['color'],
+                "height" => $_POST['height'],
+                "branded" => $_POST['branded'],
+                "mother" => $_POST['mother'],
+                "father" => $_POST['father'],
+                "description" => $_POST['description']
+            );
+
+            echo("<pre>");
+            echo(var_dump($arr));
+            echo("</pre>");
             //$mysqli = mysqli_connect("localhost", "localdev", "XnWcgBXbWMfc", "salem");
         }
         echo("<form id=\"horseSubmit\" method=\"post\"><table><tbody>");
 
         // Print table rows
-        /* <form>
-          Horse name: <input type="text">
-          Horse born on: --todo: calender--
-          Height (cm): <input type="text">
-          Branded
-          </form>
-         * 
-         */
         $this->printTableRow("Horse name", "<input type=\"text\" name=\"name\">");
         $this->printTableRow("Horse formal name", "<input type=\"text\" name=\"fname\">");
-        $dob = "";
+        $colors = "";
         $col = new Colors();
         for ($i = 0; $i < $col->getSize(); $i++) {
-            $dob = "$dob<option value=\"$i\">" . $col->get($i) . "</option>";
+            $colors = "$colors<option value=\"$i\">" . $col->get($i) . "</option>";
         }
-        $this->printTableRow("Horse Color", "<select name=\"DOB\" class=\"uneditable-input\">$dob</select>");
+        $this->printTableRow("Horse Color", "<select name=\"color\" class=\"uneditable-input\">$colors</select>");
+        $days = "<select name=\"dobDay\" class=\"uneditable-input span1\">";
+        $months = "<select name=\"dobMonth\" class=\"uneditable-input span1\">";
+        $year = "<select name=\"dobYear\" class=\"uneditable-input span1\">";
+        for ($i = 1; $i < 13; $i++) {
+            ($i < 10) ? $months = "$months<option value=\"$i\">0$i</option>" : $months = "$months<option value=\"$i\">$i</option>";
+        }
+        for ($i = 1; $i < 32; $i++) {
+            ($i < 10) ? $days = "$days<option value=\"$i\">0$i</option>" : $days = "$days<option value=\"$i\">$i</option>";
+        }
+        for ($i = 1975; $i <= date('Y'); $i++) {
+            $year = "$year<option value=\"$i\">$i</option>";
+        }
+        $this->printTableRow("Date of Birth (MM-DD-YYYY)", "$months</select>$days</select>$year</select>");
         $this->printTableRow("Height (cm)", "<input type=\"text\" name=\"height\">");
         $this->printTableRow("Branded", "<select name=\"branded\" class=\"uneditable-input\">
                 <option value=\"0\">No</option><option value=\"1\">Yes</option></select>");
-        $this->printTableRow("Mother", "<input type=\"text\" name=\"mother\" id=\"motherForm\">");
-        $this->printTableRow("Father", "<input type=\"text\" name=\"father\" id=\"fatherForm\">");
+        $this->printTableRow("Mother (Proper)", "<input type=\"text\" name=\"mother\" id=\"motherForm\">");
+        $this->printTableRow("Father (Proper)", "<input type=\"text\" name=\"father\" id=\"fatherForm\">");
         $this->printTableRow("Description", "<textarea name=\"description\" class=\"span6 form\"></textarea>");
-        $this->printTableRow("", "<input type=\"submit\" class=\"btn btn-primary\">");
-        
+        $this->printTableRow("", "<input type=\"submit\" name=\"submit\" class=\"btn btn-primary\">");
+
         echo("</tbody></table></form>");
     }
 
     public function getFooter() {
-        echo ("This is global's footer");
+        
     }
 
     public function getHeader() {
@@ -64,5 +84,10 @@ class Insert implements Module {
         echo("<tr><td class=\"field_name span4\"><strong>$name</strong></td><td class=\"field_option\">$html</td></tr>");
     }
 
+    private function days_in_month($month) {
+        return $month == 2 ? (28) : (($month - 1) % 7 % 2 ? 30 : 31);
+    }
+
 }
+
 ?>
