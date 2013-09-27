@@ -1,4 +1,4 @@
 <?php
-header('Location: /salem');
+header('Location: /discipline');
 die;
 ?>
