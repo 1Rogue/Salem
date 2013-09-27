@@ -17,7 +17,8 @@ final class ModuleManager {
         $this->arr = array(
             "global" => new Globals(),
             "latin" => new Latin(),
-            "insert" => new Insert()
+            "insert" => new Insert(),
+            "view" => new View()
         );
     }
     
