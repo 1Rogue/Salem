@@ -18,6 +18,10 @@ form#horseSubmit {
     padding-bottom: 16%;
 }
 
+form#horseSubmit table tbody tr td input[type='submit'] {
+    margin-top: 3%;
+}
+
 .field_name {
     text-align: right;
 }

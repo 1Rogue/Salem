@@ -18,7 +18,7 @@ class Insert implements Module {
         if (isset($_POST['submit'])) {
             //$mysqli = mysqli_connect("localhost", "localdev", "XnWcgBXbWMfc", "salem");
         }
-        echo("<form id=\"horseSubmit\"><table><tbody>");
+        echo("<form id=\"horseSubmit\" method=\"post\"><table><tbody>");
 
         // Print table rows
         /* <form>
@@ -43,7 +43,8 @@ class Insert implements Module {
         $this->printTableRow("Mother", "<input type=\"text\" name=\"mother\" id=\"motherForm\">");
         $this->printTableRow("Father", "<input type=\"text\" name=\"father\" id=\"fatherForm\">");
         $this->printTableRow("Description", "<textarea name=\"description\" class=\"span6 form\"></textarea>");
-
+        $this->printTableRow("", "<input type=\"submit\" class=\"btn btn-primary\">");
+        
         echo("</tbody></table></form>");
     }
 
