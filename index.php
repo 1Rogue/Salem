@@ -15,8 +15,13 @@ include 'modules/ModuleManager.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
         <link href="assets/css/main.css" rel="stylesheet" media="screen">
+        <!--[if !IE 7]>
+            <style type="text/css">
+                #wrap {display:table;height:100%}
+            </style>
+        <![endif]-->
         <script src="bootstrap/js/bootstrap.js"></script>
-        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/jquery-1.10.2.js"></script>
         <script src="assets/js/main.js"></script>
     </head>
     <?
@@ -29,7 +34,7 @@ include 'modules/ModuleManager.php';
     }
     ?>
     <body>
-        <div class="container span12">
+        <div id="wrap" class="container span12">
             <div id="header">
                 <?
                 $module->getHeader();

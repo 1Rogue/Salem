@@ -1,3 +1,5 @@
+* {margin:0;padding:0;} 
+
 .container {
     /*width: 55%;
     background-color: #fff;
@@ -5,16 +7,35 @@
     height: 100%;
     border: #faf2cc 3px solid;*/
     float: none;
-    min-height: 100%;
-    margin: 0 auto;
 }
 
 #content {
     padding-top: 4%;
+    overflow:auto;
+    padding-bottom: 38px;
 }
 
 .nav li a:hover, .nav li a:focus {
     background-color: #ddd;
+}
+
+.nav {
+    margin-bottom: 0px;
+}
+
+ul.nav-pills li {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+ul.nav-pills li a {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+ul {
+    margin: 0 0 0 25px;
 }
 
 form#horseSubmit table tbody tr td select[name='dobDay'] , 
@@ -26,12 +47,13 @@ form#horseSubmit table tbody tr td select[name='dobYear'] {
     width: 92px;
 }
 
-form#horseSubmit table tbody tr td input[type='submit'] {
-    margin-top: 3%;
+form#horseSubmit table tbody tr td.down {
+    padding-top: 3%;
 }
 
 .field_name {
     text-align: right;
+    padding-bottom: 2%;
 }
 
 .field_option {
@@ -45,15 +67,21 @@ textarea.form {
 
 input , .uneditable-input {
     height: 30px !important;
+    cursor: inherit;
 }
 
 .title {
     padding: 8px;
 }
 
-body {
+html, body {
     /*background-image: url('http://i.imgur.com/U3W9lfF.gif');
     background-size: 3%;*/
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
 }
 
 span {
@@ -66,8 +94,10 @@ span {
 }
 
 #footer {
+    position: relative;
+    margin-top: -38px; /* negative value of footer height */
     height: 38px;
-    margin-top: -38px;
+    clear:both;
     float: none;
     margin-left: auto;
     margin-right: auto;
@@ -80,4 +110,13 @@ span {
 span.footnote {
     color: #888;
     padding: 5px;
+}
+
+/* Opera fix */
+body:before {
+    content:"";
+    height:100%;
+    float:left;
+    width:0;
+    margin-top:-32767px;
 }
