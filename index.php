@@ -40,7 +40,6 @@ include 'modules/ModuleManager.php';
 
 
         <!-- End Quantcast tag -->
-        <? include("quantcast.php"); ?>
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="assets/js/jquery-1.10.2.js"></script>
         <script src="assets/js/main.js"></script>
