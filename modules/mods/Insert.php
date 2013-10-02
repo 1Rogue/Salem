@@ -29,6 +29,10 @@ class Insert implements Module {
                 "price" => $_POST['price'],
                 "pictures" => $_POST['pictures']
             );
+            
+            $files = array(
+                
+            );
 
             echo("<pre>POST:");
             var_dump($arr);
@@ -69,7 +73,7 @@ class Insert implements Module {
         $this->printTableRow("Mother (Proper)", "<input type=\"text\" name=\"mother\" id=\"motherForm\">");
         $this->printTableRow("Father (Proper)", "<input type=\"text\" name=\"father\" id=\"fatherForm\">");
         $this->printTableRow("Description", "<textarea name=\"description\" class=\"span6 form\"></textarea>");
-        $this->printTableRow("Price ($ USD) (0 for no sale)", "<input type=\"text\" name\"price\">");
+        $this->printTableRow("Price ($ USD) (0 for no sale)", "<input type=\"text\" name=\"price\">");
         $this->printTableRow("Pictures", "<input type=\"file\" name=\"pictures\" class=\"file0\">");
         echo ("<tr><td class=\"field_name span4\"><strong></strong></td><td class=\"field_option down\">
             <input type=\"submit\" name=\"submit\" class=\"btn btn-primary\"></td></tr>");

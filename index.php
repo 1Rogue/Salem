@@ -19,7 +19,8 @@ include 'modules/ModuleManager.php';
             <style type="text/css">
                 #wrap {display:table;height:100%}
             </style>
-        <![endif]-->
+        <!--[endif]-->
+        <? include("quantcast.php"); ?>
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="assets/js/jquery-1.10.2.js"></script>
         <script src="assets/js/main.js"></script>
