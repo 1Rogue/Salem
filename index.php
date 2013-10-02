@@ -20,6 +20,26 @@ include 'modules/ModuleManager.php';
                 #wrap {display:table;height:100%}
             </style>
         <!--[endif]-->
+        <!-- Quantcast Tag -->
+        <script type="text/javascript">
+            var _qevents = _qevents || [];
+
+            (function() {
+                var elem = document.createElement('script');
+                elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+                elem.async = true;
+                elem.type = "text/javascript";
+                var scpt = document.getElementsByTagName('script')[0];
+                scpt.parentNode.insertBefore(elem, scpt);
+            })();
+
+            _qevents.push({
+                qacct: "p-DhRAEpwtU4HjW"
+            });
+        </script>
+
+
+        <!-- End Quantcast tag -->
         <? include("quantcast.php"); ?>
         <script src="bootstrap/js/bootstrap.js"></script>
         <script src="assets/js/jquery-1.10.2.js"></script>
@@ -35,6 +55,11 @@ include 'modules/ModuleManager.php';
     }
     ?>
     <body>
+        <noscript>
+        <div style="display:none;">
+            <img src="//pixel.quantserve.com/pixel/p-DhRAEpwtU4HjW.gif" border="0" height="1" width="1" alt="Quantcast"></img>
+        </div>
+        </noscript>
         <div id="wrap" class="container span12">
             <div id="header">
                 <?
