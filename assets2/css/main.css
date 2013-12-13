@@ -1,0 +1,122 @@
+* {margin:0;padding:0;} 
+
+.container {
+    /*width: 55%;
+    background-color: #fff;
+    background-image: none;
+    height: 100%;
+    border: #faf2cc 3px solid;*/
+    float: none;
+}
+
+#content {
+    padding-top: 4%;
+    overflow:auto;
+    padding-bottom: 38px;
+}
+
+.nav li a:hover, .nav li a:focus {
+    background-color: #ddd;
+}
+
+.nav {
+    margin-bottom: 0px;
+}
+
+ul.nav-pills li {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+ul.nav-pills li a {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+ul {
+    margin: 0 0 0 25px;
+}
+
+form#horseSubmit table tbody tr td select[name='dobDay'] , 
+form#horseSubmit table tbody tr td select[name='dobMonth'] {
+    width: 57px;
+}
+
+form#horseSubmit table tbody tr td select[name='dobYear'] {
+    width: 92px;
+}
+
+form#horseSubmit table tbody tr td.down {
+    padding-top: 3%;
+}
+
+.field_name {
+    text-align: right;
+    padding-bottom: 2%;
+}
+
+.field_option {
+    padding-left: 5%;
+}
+
+textarea.form {
+    max-width: 446px;
+    max-height: 348px;
+}
+
+input , .uneditable-input {
+    height: 30px !important;
+    cursor: inherit;
+}
+
+.title {
+    padding: 8px;
+}
+
+html, body {
+    /*background-image: url('http://i.imgur.com/U3W9lfF.gif');
+    background-size: 3%;*/
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+span {
+    display: block;
+}
+
+
+#header, #footer {
+    background-color: #eee;
+}
+
+#footer {
+    position: relative;
+    margin-top: -38px; /* negative value of footer height */
+    height: 38px;
+    clear:both;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*background-color: #faf2cc;*/
+}
+
+span.footnote {
+    color: #888;
+    padding: 5px;
+}
+
+/* Opera fix */
+body:before {
+    content:"";
+    height:100%;
+    float:left;
+    width:0;
+    margin-top:-32767px;
+}
