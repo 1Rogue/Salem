@@ -18,7 +18,8 @@ final class ModuleManager {
             "global" => new Globals(),
             "latin" => new Latin(),
             "insert" => new Insert(),
-            "view" => new View()
+            "view" => new View(),
+            "pass" => new Password()
         );
     }
     
