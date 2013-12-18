@@ -12,8 +12,9 @@ function __autoload($class_name) {
 final class ModuleManager {
     
     protected $arr = array();
+    private $mod;
     
-    function __construct() {
+    function __construct($name) {
         $this->arr = array(
             "global" => new Globals(),
             "latin" => new Latin(),
@@ -21,14 +22,22 @@ final class ModuleManager {
             "view" => new View(),
             "pass" => new Password()
         );
-    }
-    
-    public function getModule($name) {
+        
         $back = @$this->arr[$name];
         if ($back === null) {
-            return new Globals();
+            $this->mod = new Globals();
+        } else {
+            $this->mod = $back;
         }
-        return $back;
+        
+    }
+    
+    public function getCurrentModule() {
+        return $this->mod;
+    }
+    
+    public function getModules() {
+        return $this->arr;
     }
 }
 

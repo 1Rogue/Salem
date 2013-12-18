@@ -45,12 +45,11 @@ include 'modules/ModuleManager.php';
         <script src="assets/js/main.js"></script>
     </head>
     <?
-    $modules = new ModuleManager();
-    $module = null;
+    $modules;
     if (isset($_GET['module'])) {
-        $module = $modules->getModule($_GET['module']);
+        $modules = new ModuleManager($_GET['module']);
     } else {
-        $module = $modules->getModule('global');
+        $modules = new ModuleManager('global');
     }
     ?>
     <body>
@@ -62,19 +61,19 @@ include 'modules/ModuleManager.php';
         <div id="wrap" class="container span12">
             <div id="header">
                 <?
-                $module->getHeader();
+                $modules->getCurrentModule()->getHeader();
                 ?>
             </div>
             <div id="content">
                 <?
-                $module->getContent();
+                $modules->getCurrentModule()->getContent();
                 ?>
             </div>
         </div>
         <div id="footer" class="span12">
             <?
-            echo ("Current module: " . $module->getName());
-            $module->getFooter();
+            echo ("Current module: " . $modules->getCurrentModule()->getName());
+            $$modules->getCurrentModule()->getFooter();
             ?>
             <span class="footnote pull-right">
                 &copy; Salem Farm 2013. Developed by
