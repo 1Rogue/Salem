@@ -73,7 +73,7 @@ include 'modules/ModuleManager.php';
         <div id="footer" class="span12">
             <?
             echo ("Current module: " . $modules->getCurrentModule()->getName());
-            $$modules->getCurrentModule()->getFooter();
+            $modules->getCurrentModule()->getFooter();
             ?>
             <span class="footnote pull-right">
                 &copy; Salem Farm 2013. Developed by
